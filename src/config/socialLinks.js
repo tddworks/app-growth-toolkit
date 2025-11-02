@@ -1,7 +1,7 @@
 // Social media links
 export const socialLinks = [
   {
-    url: "https://github.com/hanrw/app-growth-toolkit",
+    url: "https://github.com/tddworks/app-growth-toolkit",
     platform: "GitHub",
     label: "Star us on GitHub"
   },

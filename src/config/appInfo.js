@@ -6,7 +6,7 @@ export const appInfo = {
     src: "favicon-512.svg"
   },
   storeLinks: {
-    apple: "https://github.com/hanrw/app-growth-toolkit",
-    google: "https://github.com/hanrw/app-growth-toolkit"
+    apple: "https://github.com/tddworks/app-growth-toolkit",
+    google: "https://github.com/tddworks/app-growth-toolkit"
   }
 };

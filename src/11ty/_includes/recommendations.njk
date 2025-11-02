@@ -8,166 +8,51 @@
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-      <!-- Solo Founder -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-2 border-transparent hover:border-blue-500">
-        <div class="mb-6">
-          <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-2xl flex items-center justify-center text-3xl mb-4">
-            🚀
-          </div>
-          <h3 class="text-2xl font-bold mb-2">Solo Founder</h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-            Just starting out or bootstrapping
-          </p>
-          <div class="text-3xl font-bold text-blue-600 dark:text-blue-400">
-            $0-10<span class="text-lg text-gray-500">/mo</span>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="border-t pt-4">
-            <h4 class="font-semibold mb-3 text-sm uppercase text-gray-500">Essential Tools</h4>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>BezelBlend</strong> - Screenshots (Free)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Shots.so</strong> - Social media (Free tier)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>AppNexus</strong> - App Store mgmt (Free)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Firebase</strong> - Analytics (Free tier)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Eleventy Template</strong> - Landing page (Free)</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="pt-4">
-            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4 text-sm">
-              <p class="font-semibold mb-1">💡 Pro Tip:</p>
-              <p class="text-gray-600 dark:text-gray-400">All core features are free. Focus on building first, optimize later.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Growing App -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl border-2 border-blue-500 relative">
+      {% for stack in config.stacks %}
+      <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-2 {% if stack.popular %}border-blue-500 shadow-xl{% else %}border-transparent hover:border-{{ stack.color }}-500{% endif %} relative">
+        {% if stack.popular %}
         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
             Most Popular
           </span>
         </div>
+        {% endif %}
 
         <div class="mb-6">
-          <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-2xl flex items-center justify-center text-3xl mb-4">
-            📈
+          <div class="w-16 h-16 bg-{{ stack.color }}-100 dark:bg-{{ stack.color }}-900 rounded-2xl flex items-center justify-center text-3xl mb-4">
+            {{ stack.emoji }}
           </div>
-          <h3 class="text-2xl font-bold mb-2">Growing App</h3>
+          <h3 class="text-2xl font-bold mb-2">{{ stack.title }}</h3>
           <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-            1K-10K users, steady growth
+            {{ stack.description }}
           </p>
-          <div class="text-3xl font-bold text-purple-600 dark:text-purple-400">
-            $50-85<span class="text-lg text-gray-500">/mo</span>
+          <div class="text-3xl font-bold text-{{ stack.color }}-600 dark:text-{{ stack.color }}-400">
+            {{ stack.cost | replace("$", "") }}<span class="text-lg text-gray-500">{% if stack.cost.includes("/mo") %}/mo{% endif %}</span>
           </div>
         </div>
 
         <div class="space-y-4">
           <div class="border-t pt-4">
-            <h4 class="font-semibold mb-3 text-sm uppercase text-gray-500">Recommended Stack</h4>
+            <h4 class="font-semibold mb-3 text-sm uppercase text-gray-500">{% if stack.id == "solo" %}Essential Tools{% elif stack.id == "scaleup" %}Professional Stack{% else %}Recommended Stack{% endif %}</h4>
             <ul class="space-y-2 text-sm">
+              {% for tool in stack.tools %}
               <li class="flex items-start">
                 <span class="text-green-500 mr-2">✓</span>
-                <span><strong>PostSpark Pro</strong> - Screenshots ($10/mo)</span>
+                <span><strong>{{ tool.name }}</strong> - {{ tool.purpose }} ({{ tool.pricing }})</span>
               </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Helm Pro</strong> - App Store ($20/mo)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Mixpanel</strong> - Analytics (Free)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>RevenueCat</strong> - Subscriptions (Free)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>AppTweak</strong> - ASO ($30/mo)</span>
-              </li>
+              {% endfor %}
             </ul>
           </div>
 
           <div class="pt-4">
-            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-4 text-sm">
+            <div class="bg-{{ stack.color }}-50 dark:bg-{{ stack.color }}-900/20 rounded-lg p-4 text-sm">
               <p class="font-semibold mb-1">💡 Pro Tip:</p>
-              <p class="text-gray-600 dark:text-gray-400">Invest in ASO and faster workflows. Time savings pay for tools.</p>
+              <p class="text-gray-600 dark:text-gray-400">{{ stack.proTip }}</p>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Scale-Up -->
-      <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-2 border-transparent hover:border-purple-500">
-        <div class="mb-6">
-          <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-2xl flex items-center justify-center text-3xl mb-4">
-            🚁
-          </div>
-          <h3 class="text-2xl font-bold mb-2">Scale-Up</h3>
-          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-            10K+ users, rapid expansion
-          </p>
-          <div class="text-3xl font-bold text-green-600 dark:text-green-400">
-            $950+<span class="text-lg text-gray-500">/mo</span>
-          </div>
-        </div>
-
-        <div class="space-y-4">
-          <div class="border-t pt-4">
-            <h4 class="font-semibold mb-3 text-sm uppercase text-gray-500">Professional Stack</h4>
-            <ul class="space-y-2 text-sm">
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Helm Teams</strong> - Collaboration ($50/mo)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Amplitude</strong> - Analytics ($50/mo)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>RevenueCat</strong> - Revenue ($250/mo)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Sensor Tower</strong> - ASO ($100/mo)</span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2">✓</span>
-                <span><strong>Apple Search Ads</strong> - UA ($500+/mo)</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="pt-4">
-            <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 text-sm">
-              <p class="font-semibold mb-1">💡 Pro Tip:</p>
-              <p class="text-gray-600 dark:text-gray-400">Focus on retention and LTV. Build a team and delegate operations.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      {% endfor %}
     </div>
 
     <!-- Comparison Note -->

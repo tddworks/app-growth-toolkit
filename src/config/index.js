@@ -6,6 +6,8 @@ import { reviews } from "./reviews.js";
 import { faq } from "./faq.js";
 import { socialLinks } from "./socialLinks.js";
 import { updates, changelogUrl } from "./updates.js";
+import { tools, pricingBadges, categories } from "./tools.js";
+import { stacks } from "./stacks.js";
 
 export const siteConfig = {
   ...appInfo,
@@ -15,8 +17,12 @@ export const siteConfig = {
   socialLinks,
   reviews,
   updates,
-  changelogUrl
+  changelogUrl,
+  tools,
+  pricingBadges,
+  categories,
+  stacks
 };
 
 // Re-export individual configs for direct imports
-export { appInfo, features, screenshots, reviews, faq, socialLinks, updates, changelogUrl };
+export { appInfo, features, screenshots, reviews, faq, socialLinks, updates, changelogUrl, tools, pricingBadges, categories, stacks };

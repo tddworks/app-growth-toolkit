@@ -14,7 +14,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addGlobalData("site", {
     title: "App Growth Toolkit",
     description: "Curated collection of the best tools to help app founders drive revenue and accelerate growth",
-    url: "https://hanrw.github.io/app-growth-toolkit/",
+    url: "https://tddworks.github.io/app-growth-toolkit/",
     author: "App Founders Community"
   });
 

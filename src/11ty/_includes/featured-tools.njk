@@ -10,166 +10,45 @@
     <!-- Tool Categories Tabs -->
     <div class="mb-12">
       <div class="flex flex-wrap justify-center gap-4 mb-8">
-        <button class="tool-category-btn active px-6 py-3 rounded-lg font-semibold transition-all" data-category="all">
-          All Tools
+        {% for category in config.categories %}
+        <button class="tool-category-btn {% if category.id == 'all' %}active{% endif %} px-6 py-3 rounded-lg font-semibold transition-all" data-category="{{ category.id }}">
+          {% if category.emoji %}{{ category.emoji }} {% endif %}{{ category.label }}
         </button>
-        <button class="tool-category-btn px-6 py-3 rounded-lg font-semibold transition-all" data-category="screenshots">
-          📸 Screenshots
-        </button>
-        <button class="tool-category-btn px-6 py-3 rounded-lg font-semibold transition-all" data-category="appstore">
-          🏪 App Store
-        </button>
-        <button class="tool-category-btn px-6 py-3 rounded-lg font-semibold transition-all" data-category="aso">
-          🔍 ASO
-        </button>
-        <button class="tool-category-btn px-6 py-3 rounded-lg font-semibold transition-all" data-category="analytics">
-          📊 Analytics
-        </button>
+        {% endfor %}
       </div>
     </div>
 
     <!-- Featured Tools Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Shots.so -->
-      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="screenshots">
+      {% for tool in config.tools %}
+      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="{{ tool.category }}">
         <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-2xl">
-            🎨
+          <div class="w-12 h-12 bg-gradient-to-br {{ tool.gradient }} rounded-xl flex items-center justify-center text-2xl">
+            {{ tool.emoji }}
           </div>
-          <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-semibold rounded-full">
-            Free + Paid
+          <span class="px-3 py-1 {{ config.pricingBadges[tool.pricing].color }} text-xs font-semibold rounded-full">
+            {{ config.pricingBadges[tool.pricing].label }}
           </span>
         </div>
-        <h3 class="text-xl font-bold mb-2">Shots.so</h3>
+        <h3 class="text-xl font-bold mb-2">{{ tool.name }}</h3>
         <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-          Animated mockups with magic backgrounds. Perfect for social media and marketing.
+          {{ tool.description }}
         </p>
         <div class="flex items-center justify-between">
-          <a href="https://shots.so/" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
-            Visit Website →
+          <a href="{{ tool.url }}" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
+            Visit →
           </a>
-          <span class="text-xs text-gray-500">Web</span>
+          <span class="text-xs text-gray-500">{{ tool.platform }}</span>
         </div>
       </div>
-
-      <!-- BezelBlend -->
-      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="screenshots">
-        <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-2xl">
-            📱
-          </div>
-          <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold rounded-full">
-            Free
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2">BezelBlend</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-          Most accurate Apple device bezels. Includes iPhone 17 and App Store sizes.
-        </p>
-        <div class="flex items-center justify-between">
-          <a href="https://apps.apple.com/us/app/bezelblend/id6743046579" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
-            Download →
-          </a>
-          <span class="text-xs text-gray-500">iOS/Mac</span>
-        </div>
-      </div>
-
-      <!-- PostSpark -->
-      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="screenshots">
-        <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center text-2xl">
-            ✨
-          </div>
-          <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-semibold rounded-full">
-            Freemium
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2">PostSpark</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-          Browser frames and annotations. 16+ layouts for quick professional screenshots.
-        </p>
-        <div class="flex items-center justify-between">
-          <a href="https://postspark.app/screenshot" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
-            Try it Free →
-          </a>
-          <span class="text-xs text-gray-500">Web</span>
-        </div>
-      </div>
-
-      <!-- AppNexus -->
-      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="appstore">
-        <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center text-2xl">
-            🚀
-          </div>
-          <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs font-semibold rounded-full">
-            Freemium
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2">AppNexus</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-          Native macOS app for App Store Connect. Built-in screenshot editor and AI descriptions.
-        </p>
-        <div class="flex items-center justify-between">
-          <a href="https://appnexus.app/" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
-            Download Free →
-          </a>
-          <span class="text-xs text-gray-500">macOS</span>
-        </div>
-      </div>
-
-      <!-- Helm -->
-      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="appstore">
-        <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center text-2xl">
-            ⚡
-          </div>
-          <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs font-semibold rounded-full">
-            Freemium
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2">Helm</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-          12x faster App Store updates. AI localization and review management.
-        </p>
-        <div class="flex items-center justify-between">
-          <a href="https://helm-app.com/" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
-            Get Started →
-          </a>
-          <span class="text-xs text-gray-500">iOS/Mac</span>
-        </div>
-      </div>
-
-      <!-- Eleventy Template -->
-      <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="aso">
-        <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center text-2xl">
-            🎨
-          </div>
-          <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs font-semibold rounded-full">
-            Free
-          </span>
-        </div>
-        <h3 class="text-xl font-bold mb-2">Eleventy Landing</h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-          Modern landing page template. Dark mode, lightbox, and device toggle included.
-        </p>
-        <div class="flex items-center justify-between">
-          <a href="https://github.com/hanrw/eleventy-landing-template" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline text-sm">
-            View on GitHub →
-          </a>
-          <span class="text-xs text-gray-500">Template</span>
-        </div>
-      </div>
-
+      {% endfor %}
     </div>
 
     <!-- View All CTA -->
     <div class="text-center mt-12">
       <a href="APP_GROWTH_TOOLKIT.md" class="inline-flex items-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-xl hover:scale-105 transition-transform font-semibold">
         <span class="mr-3">📚</span>
-        View All 20+ Tools in Full Guide
+        View Complete Guide ({{ config.tools.length }}+ Tools)
       </a>
     </div>
   </div>

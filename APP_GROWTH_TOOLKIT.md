@@ -12,7 +12,7 @@ Professional landing pages are essential for converting visitors into users. The
 
 | Tool | Tech Stack | Features | License | Link |
 |------|-----------|----------|---------|------|
-| **Eleventy Landing Template** | Eleventy + Tailwind CSS | Dark mode, device toggle, lightbox, updates section, SEO optimized | MIT | [GitHub](https://github.com/hanrw/eleventy-landing-template) |
+| **Eleventy Landing Template** | Eleventy + Tailwind CSS | Dark mode, device toggle, lightbox, updates section, SEO optimized | MIT | [GitHub](https://github.com/tddworks/eleventy-landing-template) |
 | **Mobile Landing** | Astro + React + TypeScript | Framer Motion animations, theme system, MDX support, WCAG compliant | MIT | [GitHub](https://github.com/bohd4nx/mobile-landing) |
 
 **Why Landing Pages Matter:**
@@ -24,7 +24,7 @@ Professional landing pages are essential for converting visitors into users. The
 **Quick Setup:**
 ```bash
 # Eleventy Template
-git clone https://github.com/hanrw/eleventy-landing-template.git
+git clone https://github.com/tddworks/eleventy-landing-template.git
 cd eleventy-landing-template
 npm install
 npm run dev

@@ -20,4 +20,4 @@ export const updates = [
 ];
 
 // Optional: Link to full changelog page
-export const changelogUrl = "https://github.com/hanrw/app-growth-toolkit"; // Set to your changelog URL or "#" to hide
+export const changelogUrl = "https://github.com/tddworks/app-growth-toolkit"; // Set to your changelog URL or "#" to hide
