@@ -85,22 +85,43 @@ document.addEventListener('DOMContentLoaded', function() {
   const categoryBtns = document.querySelectorAll('.tool-category-btn');
   const toolCards = document.querySelectorAll('.tool-card');
 
+  function filterByCategory(category) {
+    // Update active button
+    categoryBtns.forEach(b => b.classList.remove('active'));
+    const targetBtn = document.querySelector(`.tool-category-btn[data-category="${category}"]`);
+    if (targetBtn) {
+      targetBtn.classList.add('active');
+    }
+
+    // Filter tools
+    toolCards.forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
   categoryBtns.forEach(btn => {
     btn.addEventListener('click', function() {
-      const category = this.dataset.category;
+      filterByCategory(this.dataset.category);
+    });
+  });
 
-      // Update active button
-      categoryBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+  // Handle category filter links from features section
+  document.querySelectorAll('.category-filter-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const category = this.dataset.filterCategory;
 
-      // Filter tools
-      toolCards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      // Scroll to tools section
+      document.querySelector('#tools').scrollIntoView({ behavior: 'smooth' });
+
+      // Filter by category after a short delay to allow scrolling
+      setTimeout(() => {
+        filterByCategory(category);
+      }, 300);
     });
   });
 });
