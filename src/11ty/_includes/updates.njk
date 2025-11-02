@@ -1,0 +1,69 @@
+<section id="updates" class="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+  <div class="container mx-auto max-w-4xl">
+    <!-- Section Header -->
+    <div class="flex items-center justify-between mb-12">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-2">Latest Updates</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400">See what's new in our latest releases</p>
+      </div>
+      {% if config.changelogUrl and config.changelogUrl != "#" %}
+      <a
+        href="{{ config.changelogUrl }}"
+        class="hidden md:flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+      >
+        <span class="mr-2">View all</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+      {% endif %}
+    </div>
+
+    <!-- Updates List -->
+    <div class="space-y-6">
+      {% for update in config.updates %}
+      <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow">
+        <!-- Version Header -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+              Version {{ update.version }}
+              {% if update.build %}
+              <span class="text-sm font-normal text-gray-500 dark:text-gray-400">(Build {{ update.build }})</span>
+              {% endif %}
+            </h3>
+          </div>
+          <div class="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
+            {{ update.date }}
+          </div>
+        </div>
+
+        <!-- Changes List -->
+        <ul class="space-y-3">
+          {% for change in update.changes %}
+          <li class="flex items-start">
+            <span class="inline-block w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+            <span class="text-gray-700 dark:text-gray-300">{{ change }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Mobile View All Link -->
+    {% if config.changelogUrl and config.changelogUrl != "#" %}
+    <div class="mt-8 text-center md:hidden">
+      <a
+        href="{{ config.changelogUrl }}"
+        class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+      >
+        <span class="mr-2">View all updates</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>

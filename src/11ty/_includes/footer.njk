@@ -1,0 +1,59 @@
+<footer class="py-16 px-4 bg-gray-900 text-white">
+  <div class="container mx-auto max-w-6xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <img src="{{ config.logo.src }}" alt="{{ config.title }}" class="h-10 w-10">
+          <span class="text-xl font-bold">{{ config.title }}</span>
+        </div>
+        <p class="text-gray-400 mb-6">{{ config.description }}</p>
+        <div class="flex items-center space-x-2 text-sm text-gray-500">
+          <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+          <span>Updated regularly</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-lg mb-4">Browse Toolkit</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li><a href="#features" class="hover:text-white transition-colors flex items-center">
+            <span class="mr-2">→</span> Tool Categories
+          </a></li>
+          <li><a href="#tools" class="hover:text-white transition-colors flex items-center">
+            <span class="mr-2">→</span> Featured Tools
+          </a></li>
+          <li><a href="#recommendations" class="hover:text-white transition-colors flex items-center">
+            <span class="mr-2">→</span> Your Perfect Stack
+          </a></li>
+          <li><a href="APP_GROWTH_TOOLKIT.md" class="hover:text-white transition-colors flex items-center">
+            <span class="mr-2">📚</span> Full Guide
+          </a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-bold text-lg mb-4">Community</h3>
+        <div class="space-y-3 text-gray-400">
+          {% for link in config.socialLinks %}
+          <a href="{{ link.url }}" target="_blank" class="block hover:text-white transition-colors flex items-center">
+            <span class="mr-2">→</span> {{ link.platform }}
+          </a>
+          {% endfor %}
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-gray-800">
+          <p class="text-sm text-gray-500">
+            Open source • No affiliate links<br/>
+            Made for app founders
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+      <p class="text-sm">
+        &copy; {{ "now" | date("YYYY") }} {{ config.title }}. Licensed under Apache 2.0.
+      </p>
+    </div>
+  </div>
+</footer>

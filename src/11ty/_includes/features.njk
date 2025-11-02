@@ -1,0 +1,21 @@
+<section id="features" class="py-20 px-4 bg-white dark:bg-gray-900">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">What's Inside</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400">6 essential categories covering every stage of your app growth journey</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for feature in config.features %}
+      <div class="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:scale-105 border border-gray-200 dark:border-gray-700">
+        <div class="text-5xl mb-4">{{ feature.icon }}</div>
+        <h3 class="text-2xl font-bold mb-3">{{ feature.title }}</h3>
+        <p class="text-gray-600 dark:text-gray-400">{{ feature.description }}</p>
+        <div class="mt-4 inline-flex items-center text-blue-600 dark:text-blue-400 font-semibold text-sm">
+          Explore tools →
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

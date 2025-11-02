@@ -1,0 +1,119 @@
+<section id="screenshots" class="py-20 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">See It In Action</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400">Beautiful on every device</p>
+    </div>
+
+    <!-- Device Toggle -->
+    {% if config.screenshots.iphone and config.screenshots.ipad %}
+    <div class="flex justify-center mb-8">
+      <div class="inline-flex bg-gray-100 dark:bg-gray-800 rounded-xl p-1">
+        <button
+          id="toggle-iphone"
+          class="device-toggle px-6 py-3 rounded-lg font-semibold transition-all duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-md"
+          data-device="iphone"
+        >
+          📱 iPhone
+        </button>
+        <button
+          id="toggle-ipad"
+          class="device-toggle px-6 py-3 rounded-lg font-semibold transition-all duration-200 text-gray-600 dark:text-gray-400"
+          data-device="ipad"
+        >
+          📱 iPad
+        </button>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Screenshots Container -->
+    <div class="relative max-w-full overflow-x-hidden">
+      <!-- iPhone Screenshots -->
+      {% if config.screenshots.iphone %}
+      <div id="iphone-screenshots" class="screenshots-container">
+        <div class="flex gap-4 overflow-x-auto py-8 px-4 md:px-0 scrollbar-hide">
+          <div class="flex gap-4 mx-auto">
+            {% for screenshot in config.screenshots.iphone %}
+            <div class="flex-shrink-0 w-[260px] p-2">
+              <img
+                src="{{ screenshot }}"
+                alt="iPhone screenshot {{ loop.index }}"
+                class="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105 cursor-pointer screenshot-image"
+                loading="lazy"
+                onerror="this.style.display='none'"
+                data-device="iphone"
+                data-index="{{ loop.index0 }}"
+              />
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- iPad Screenshots -->
+      {% if config.screenshots.ipad %}
+      <div id="ipad-screenshots" class="screenshots-container hidden">
+        <div class="flex gap-4 overflow-x-auto py-8 px-4 md:px-0 scrollbar-hide">
+          <div class="flex gap-4 mx-auto">
+            {% for screenshot in config.screenshots.ipad %}
+            <div class="flex-shrink-0 w-[360px] p-2">
+              <img
+                src="{{ screenshot }}"
+                alt="iPad screenshot {{ loop.index }}"
+                class="w-full h-auto rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 transition-transform duration-300 hover:scale-105 cursor-pointer screenshot-image"
+                loading="lazy"
+                onerror="this.style.display='none'"
+                data-device="ipad"
+                data-index="{{ loop.index0 }}"
+              />
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="text-center mt-12">
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        💡 Tip: Add your screenshots to <code class="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded">public/screenshots/</code>
+      </p>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="screenshot-lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4">
+    <!-- Close Button -->
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Previous Button -->
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 p-2">
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </button>
+
+    <!-- Next Button -->
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors z-10 p-2">
+      <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+
+    <!-- Image Container -->
+    <div id="lightbox-content" class="max-w-4xl max-h-full flex items-center justify-center">
+      <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg">
+    </div>
+
+    <!-- Counter -->
+    <div id="lightbox-counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black bg-opacity-50 px-4 py-2 rounded-full">
+      <span id="lightbox-current">1</span> / <span id="lightbox-total">5</span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section id="reviews" class="py-20 px-4">
+  <div class="container mx-auto max-w-6xl">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">What Users Say</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400">Loved by thousands of users worldwide</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {% for review in config.reviews %}
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+            {{ review.author[0] }}
+          </div>
+          <div class="ml-4">
+            <h4 class="font-bold">{{ review.author }}</h4>
+            <div class="flex text-yellow-400">
+              {% for i in range(0, review.rating) %}
+              ⭐
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300">{{ review.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title or config.title }}</title>
+  <meta name="description" content="{{ description or config.description }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ config.logo.src }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title or config.title }}">
+  <meta property="og:description" content="{{ description or config.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or config.title }}">
+  <meta name="twitter:description" content="{{ description or config.description }}">
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+  {% include "header.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+
+  <script src="js/theme.js"></script>
+  <script src="js/screenshots.js"></script>
+</body>
+</html>

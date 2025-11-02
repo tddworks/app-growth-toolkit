@@ -1,0 +1,26 @@
+<header class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <img src="{{ config.logo.src }}" alt="{{ config.title }}" class="h-10 w-10">
+        <span class="text-xl font-bold">{{ config.title }}</span>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#features" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Categories</a>
+        <a href="#tools" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Tools</a>
+        <a href="#recommendations" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Your Stack</a>
+        <a href="{{ config.storeLinks.apple }}" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GitHub</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+          <span class="sr-only">Toggle theme</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
