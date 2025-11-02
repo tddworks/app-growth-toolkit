@@ -11,7 +11,8 @@ export const tools = [
     pricing: "free-paid",
     platform: "Web",
     gradient: "from-purple-500 to-pink-500",
-    emoji: "🎨"
+    emoji: "🎨",
+    logo: "https://shots.so/favicon.ico"
   },
   {
     name: "BezelBlend",
@@ -21,7 +22,8 @@ export const tools = [
     pricing: "free",
     platform: "iOS/Mac",
     gradient: "from-blue-500 to-cyan-500",
-    emoji: "📱"
+    emoji: "📱",
+    logo: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8c/d5/93/8cd59372-d5f8-3f8a-e0aa-e6732e7d1a69/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/230x0w.webp"
   },
   {
     name: "PostSpark",
@@ -31,7 +33,8 @@ export const tools = [
     pricing: "freemium",
     platform: "Web",
     gradient: "from-orange-500 to-red-500",
-    emoji: "✨"
+    emoji: "✨",
+    logo: "https://postspark.app/favicon.ico"
   },
   {
     name: "Previewed",
@@ -41,7 +44,8 @@ export const tools = [
     pricing: "paid",
     platform: "Web",
     gradient: "from-pink-500 to-rose-500",
-    emoji: "🎬"
+    emoji: "🎬",
+    logo: "https://previewed.app/favicon.ico"
   },
 
   // App Store Connect Management
@@ -53,7 +57,8 @@ export const tools = [
     pricing: "freemium",
     platform: "macOS",
     gradient: "from-indigo-500 to-purple-500",
-    emoji: "🚀"
+    emoji: "🚀",
+    logo: "https://appnexus.app/favicon.ico"
   },
   {
     name: "Helm",
@@ -63,7 +68,8 @@ export const tools = [
     pricing: "freemium",
     platform: "iOS/Mac",
     gradient: "from-green-500 to-teal-500",
-    emoji: "⚡"
+    emoji: "⚡",
+    logo: "https://helm-app.com/favicon.ico"
   },
 
   // ASO Tools
@@ -75,7 +81,8 @@ export const tools = [
     pricing: "free",
     platform: "macOS",
     gradient: "from-indigo-500 to-blue-500",
-    emoji: "🔍"
+    emoji: "🔍",
+    logo: "https://appnexus.app/favicon.ico"
   },
   {
     name: "Helm ASO",
@@ -85,7 +92,8 @@ export const tools = [
     pricing: "freemium",
     platform: "iOS/Mac",
     gradient: "from-teal-500 to-green-500",
-    emoji: "📈"
+    emoji: "📈",
+    logo: "https://helm-app.com/favicon.ico"
   },
   {
     name: "AppTweak",
@@ -95,7 +103,8 @@ export const tools = [
     pricing: "paid",
     platform: "Web",
     gradient: "from-blue-500 to-indigo-500",
-    emoji: "🎯"
+    emoji: "🎯",
+    logo: "https://www.google.com/s2/favicons?domain=apptweak.com&sz=128"
   },
   {
     name: "Sensor Tower",
@@ -105,7 +114,8 @@ export const tools = [
     pricing: "paid",
     platform: "Web",
     gradient: "from-purple-500 to-indigo-500",
-    emoji: "📡"
+    emoji: "📡",
+    logo: "https://www.google.com/s2/favicons?domain=sensortower.com&sz=128"
   },
 
   // Analytics Tools
@@ -117,7 +127,8 @@ export const tools = [
     pricing: "freemium",
     platform: "iOS/Android",
     gradient: "from-yellow-500 to-orange-500",
-    emoji: "🔥"
+    emoji: "🔥",
+    logo: "https://www.google.com/s2/favicons?domain=firebase.google.com&sz=128"
   },
   {
     name: "Mixpanel",
@@ -127,7 +138,8 @@ export const tools = [
     pricing: "freemium",
     platform: "Web",
     gradient: "from-purple-500 to-pink-500",
-    emoji: "📊"
+    emoji: "📊",
+    logo: "https://mixpanel.com/favicon.ico"
   },
   {
     name: "Amplitude",
@@ -137,7 +149,8 @@ export const tools = [
     pricing: "freemium",
     platform: "Web",
     gradient: "from-blue-500 to-purple-500",
-    emoji: "📈"
+    emoji: "📈",
+    logo: "https://amplitude.com/favicon.ico"
   },
 
   // Monetization Tools
@@ -149,7 +162,8 @@ export const tools = [
     pricing: "freemium",
     platform: "iOS/Android",
     gradient: "from-green-500 to-emerald-500",
-    emoji: "💰"
+    emoji: "💰",
+    logo: "https://www.google.com/s2/favicons?domain=revenuecat.com&sz=128"
   },
   {
     name: "Adapty",
@@ -159,7 +173,8 @@ export const tools = [
     pricing: "freemium",
     platform: "iOS/Android",
     gradient: "from-teal-500 to-cyan-500",
-    emoji: "💳"
+    emoji: "💳",
+    logo: "https://adapty.io/favicon.ico"
   },
   {
     name: "Qonversion",
@@ -169,7 +184,8 @@ export const tools = [
     pricing: "freemium",
     platform: "iOS/Android",
     gradient: "from-indigo-500 to-purple-500",
-    emoji: "📊"
+    emoji: "📊",
+    logo: "https://www.google.com/s2/favicons?domain=qonversion.io&sz=128"
   },
 
   // Landing Page Templates
@@ -181,7 +197,8 @@ export const tools = [
     pricing: "free",
     platform: "Template",
     gradient: "from-yellow-500 to-orange-500",
-    emoji: "🎨"
+    emoji: "🎨",
+    logo: "https://github.githubassets.com/favicons/favicon.svg"
   },
   {
     name: "Mobile Landing",
@@ -191,7 +208,8 @@ export const tools = [
     pricing: "free",
     platform: "Template",
     gradient: "from-cyan-500 to-blue-500",
-    emoji: "🚀"
+    emoji: "🚀",
+    logo: "https://github.githubassets.com/favicons/favicon.svg"
   }
 ];
 

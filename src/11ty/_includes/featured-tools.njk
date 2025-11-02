@@ -23,8 +23,13 @@
       {% for tool in config.tools %}
       <div class="tool-card bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 hover:shadow-xl transition-shadow border border-gray-200 dark:border-gray-700" data-category="{{ tool.category }}">
         <div class="flex items-start justify-between mb-4">
-          <div class="w-12 h-12 bg-gradient-to-br {{ tool.gradient }} rounded-xl flex items-center justify-center text-2xl">
+          <div class="w-12 h-12 bg-gradient-to-br {{ tool.gradient }} rounded-xl flex items-center justify-center text-2xl overflow-hidden">
+            {% if tool.logo %}
+            <img src="{{ tool.logo }}" alt="{{ tool.name }} logo" class="w-8 h-8 object-contain" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span style="display:none;">{{ tool.emoji }}</span>
+            {% else %}
             {{ tool.emoji }}
+            {% endif %}
           </div>
           <span class="px-3 py-1 {{ config.pricingBadges[tool.pricing].color }} text-xs font-semibold rounded-full">
             {{ config.pricingBadges[tool.pricing].label }}
