@@ -12,7 +12,7 @@ export const tools = [
     platform: "Web",
     gradient: "from-purple-500 to-pink-500",
     emoji: "🎨",
-    logo: "https://shots.so/favicon.ico"
+    logo: "https://shots.so/image/favicon.png"
   },
   {
     name: "BezelBlend",
