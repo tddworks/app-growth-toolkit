@@ -1,254 +1,208 @@
 # 📱 App Growth Toolkit
 
-A curated landing page showcasing the best tools and resources to help app founders drive revenue, optimize marketing, and accelerate growth.
+> Curated collection of the best tools and resources to help app founders drive revenue, optimize marketing, and accelerate growth.
 
-## ✨ What's Included
+**Live Site:** [https://tddworks.github.io/app-growth-toolkit/](https://tddworks.github.io/app-growth-toolkit/)
 
-### 🎨 Tool Categories
+---
 
-- **Landing Page Templates** - Eleventy & Astro templates for quick launches
-- **Screenshot Tools** - Shots.so, PostSpark, BezelBlend for stunning visuals
-- **App Store Optimization** - ASO tools, keyword research, competitor analysis
-- **Analytics & Growth** - Firebase, Mixpanel, Amplitude tracking tools
-- **Monetization Tools** - RevenueCat, Adapty, subscription management
-- **Growth Strategies** - Complete playbook from launch to scale
+## 🎯 What is This?
 
-### 📚 Full Documentation
+App Growth Toolkit is a comprehensive resource for app founders at every stage - from solo founders just starting out to teams scaling to 10K+ users. We curate the best tools across 6 essential categories and provide stage-based stack recommendations.
 
-The complete toolkit guide is available in [APP_GROWTH_TOOLKIT.md](APP_GROWTH_TOOLKIT.md) with:
-- Detailed tool comparisons with pricing
-- Toolkit recommendations by stage (Solo Founders → Scale-ups)
-- 12-month growth timeline with checklists
-- Monetization strategies & pricing sweet spots
-- Free resources and bonus content
+### ✨ Features
+
+- **18+ Curated Tools** - Hand-picked by successful app founders
+- **6 Tool Categories** - Screenshots, App Store, ASO, Analytics, Monetization, Landing Pages
+- **3 Stage-Based Stacks** - Recommendations for Solo Founders, Growing Apps, and Scale-Ups
+- **Easy Filtering** - Click any category to filter tools
+- **Always Updated** - Open source and accepting contributions
+
+---
+
+## 🛠️ Tool Categories
+
+### 📸 Screenshots
+Create stunning App Store screenshots with device mockups and backgrounds.
+- Shots.so, BezelBlend, PostSpark, Previewed
+
+### 🏪 App Store Connect
+Manage your App Store presence faster with native apps.
+- AppNexus, Helm
+
+### 🔍 ASO (App Store Optimization)
+Boost organic downloads with keyword research and competitor analysis.
+- AppNexus ASO, Helm ASO, AppTweak, Sensor Tower
+
+### 📊 Analytics
+Track user behavior and optimize conversions.
+- Firebase, Mixpanel, Amplitude
+
+### 💰 Monetization
+Maximize revenue with subscription management and paywall testing.
+- RevenueCat, Adapty, Qonversion
+
+### 🎨 Landing Pages
+Launch beautiful marketing sites quickly.
+- Eleventy Landing Template, Mobile Landing (Astro)
+
+---
+
+## 📚 Stack Recommendations
+
+### 🚀 Solo Founder ($0-10/mo)
+Perfect for bootstrappers and those just starting out.
+- BezelBlend, AppNexus, Firebase, Eleventy Landing
+- **All core features are free**
+
+### 📈 Growing App ($50-85/mo) ⭐ Most Popular
+For apps with 1K-10K users and steady growth.
+- BezelBlend, PostSpark Pro, AppNexus, Helm Pro, Mixpanel, RevenueCat, AppTweak
+- **Time savings pay for the tools**
+
+### 🚁 Scale-Up ($950+/mo)
+For apps with 10K+ users in rapid expansion.
+- BezelBlend, AppNexus, Helm Teams, Amplitude, RevenueCat, Sensor Tower, Apple Search Ads
+- **Focus on retention and LTV**
+
+---
 
 ## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/tddworks/app-growth-toolkit.git
+cd app-growth-toolkit
+
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
-
-# Build for production
-npm run build
 ```
 
 Your site will be running at `http://localhost:8080`
 
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Whether you want to add a new tool, suggest a stack, or improve the site.
+
+### Adding a New Tool
+
+**Simple:** Edit one file → Submit PR → Done!
+
+1. **Edit `src/config/tools.js`** and add your tool:
+
+```javascript
+{
+  name: "Your Tool Name",
+  description: "Brief description (max 2 lines). Focus on the value it provides.",
+  url: "https://yourtool.com",
+  category: "screenshots", // screenshots, appstore, aso, analytics, monetization, landing
+  pricing: "freemium", // free, freemium, free-paid, paid
+  platform: "Web", // Web, iOS, macOS, iOS/Mac, Template, Chrome Extension
+  gradient: "from-blue-500 to-purple-500", // Tailwind gradient colors
+  emoji: "🚀" // Pick an emoji that represents your tool
+}
+```
+
+2. **Test locally:** Run `npm run dev` and verify it appears correctly
+
+3. **Submit a PR** with your changes
+
+**See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines and examples.**
+
+### Adding a Stack Recommendation
+
+Edit `src/config/stacks.js` to add stage-based recommendations:
+
+```javascript
+{
+  id: "your-stage",
+  title: "Your Stage Name",
+  description: "Who this stack is for",
+  emoji: "🚀",
+  cost: "$XX-XXX/mo",
+  color: "blue", // blue, purple, green, indigo, red, yellow
+  popular: false,
+  tools: [
+    { name: "Tool Name", purpose: "What it's used for", pricing: "$XX/mo or Free" }
+  ],
+  proTip: "Your advice for founders at this stage"
+}
+```
+
+---
+
 ## 🎨 Customization
 
-All content is configured through easy-to-edit files in `src/config/`:
+All content is configured through files in `src/config/`:
 
-- `appInfo.js` - Site title, description, links
-- `features.js` - Tool categories
-- `updates.js` - Changelog and what's new
-- `reviews.js` - Founder testimonials
-- `faq.js` - Frequently asked questions
-- `socialLinks.js` - Community links
-  },
+- **`tools.js`** - All featured tools with categories and pricing
+- **`stacks.js`** - Stage-based stack recommendations
+- **`features.js`** - Tool category cards on homepage
+- **`appInfo.js`** - Site title, description, links
+- **`socialLinks.js`** - Community links (GitHub, Twitter, etc.)
+
+### Example: Changing Site Info
+
+Edit `src/config/appInfo.js`:
+
+```javascript
+export const appInfo = {
+  title: "Your Toolkit Name",
+  description: "Your description",
   storeLinks: {
-    apple: "https://apps.apple.com/app/your-app",
-    google: "https://play.google.com/store/apps/details?id=your.app"
+    apple: "https://github.com/yourusername/your-repo",
+    google: "https://github.com/yourusername/your-repo"
   }
 };
 ```
 
-### 2️⃣ **Features Section** (`src/config/features.js`)
-
-Add or modify your app's features:
-
-```javascript
-export const features = [
-  {
-    title: "Smart Analytics",
-    description: "Get detailed insights into your app usage",
-    icon: "📊"  // Use emoji or replace with icon component
-  },
-  // Add more features...
-];
-```
-
-### 3️⃣ **User Reviews** (`src/config/reviews.js`)
-
-Showcase user testimonials:
-
-```javascript
-export const reviews = [
-  {
-    author: "Sarah Johnson",
-    rating: 5,
-    text: "This app completely transformed how I work!",
-    avatar: "avatars/sarah.jpg"  // Optional
-  },
-  // Add more reviews...
-];
-```
-
-### 4️⃣ **FAQ Section** (`src/config/faq.js`)
-
-Add frequently asked questions:
-
-```javascript
-export const faq = [
-  {
-    question: "Is the app free to use?",
-    answer: "Yes! The app is completely free with optional premium features."
-  },
-  // Add more FAQs...
-];
-```
-
-### 5️⃣ **Social Media Links** (`src/config/socialLinks.js`)
-
-Add your social media profiles:
-
-```javascript
-export const socialLinks = [
-  {
-    url: "https://instagram.com/yourapp",
-    platform: "Instagram",
-    label: "Follow us on Instagram"
-  },
-  // Add more social links...
-];
-```
-
-### 6️⃣ **Screenshots** (`src/config/screenshots.js` & `public/screenshots/`)
-
-**Step 1:** Add your screenshot images to `public/screenshots/`:
-
-```
-public/screenshots/
-├── iphone/
-│   ├── 1.png  (Recommended: 260x462px, 9:16 ratio)
-│   ├── 2.png
-│   └── ...
-└── ipad/
-    ├── 1.png  (Recommended: 360x480px, 4:3 ratio)
-    ├── 2.png
-    └── ...
-```
-
-**Step 2:** Configure the paths in `src/config/screenshots.js`:
-
-```javascript
-export const screenshots = {
-  basePath: '/screenshots',
-  formats: ['avif', 'webp', 'png'],
-  iphone: [
-    "/screenshots/iphone/1.png",
-    "/screenshots/iphone/2.png",
-    // Add more...
-  ],
-  ipad: [
-    "/screenshots/ipad/1.png",
-    "/screenshots/ipad/2.png",
-    // Add more...
-  ]
-};
-```
-
-> 💡 **Tip:** The `public/` directory contents are copied to the root of your site, so `/screenshots/iphone/1.png` maps to `public/screenshots/iphone/1.png`
-
-### 7️⃣ **Updates/Changelog** (`src/config/updates.js`)
-
-Keep users informed about new features and bug fixes:
-
-```javascript
-export const updates = [
-  {
-    version: "1.2.0",
-    build: "24",  // Optional build number
-    date: "2025-01-15",
-    changes: [
-      "Added dark mode support with system preference detection",
-      "Improved performance with lazy loading images",
-      "Fixed iOS 18 navigation bar display issues",
-      "New onboarding experience for first-time users"
-    ]
-  },
-  // Add more updates in reverse chronological order (newest first)
-];
-
-// Optional: Link to full changelog page
-export const changelogUrl = "#";  // Set to your changelog URL or "#" to hide "View all" link
-```
-
-**Tips:**
-- List updates in **reverse chronological order** (newest first)
-- Use clear, user-friendly language
-- Group related changes together
-- Include version number, optional build number, and release date
+---
 
 ## 📁 Project Structure
 
 ```
-eleventy-landing-template/
+app-growth-toolkit/
 ├── src/
-│   ├── config/              # Centralized configuration
-│   │   ├── appInfo.js       # App information
-│   │   ├── features.js      # Features list
-│   │   ├── screenshots.js   # Screenshot config
-│   │   ├── updates.js       # Updates/changelog
-│   │   ├── reviews.js       # User reviews
-│   │   ├── faq.js          # FAQ items
-│   │   ├── socialLinks.js   # Social media links
-│   │   └── index.js        # Config aggregator
-│   ├── 11ty/               # Eleventy source files
-│   │   ├── _data/          # Eleventy data files
-│   │   ├── _includes/      # Component templates
-│   │   ├── _layouts/       # Page layouts
+│   ├── config/              # Configuration files
+│   │   ├── tools.js         # All tools database
+│   │   ├── stacks.js        # Stack recommendations
+│   │   ├── features.js      # Category cards
+│   │   ├── appInfo.js       # Site info
+│   │   └── index.js         # Config aggregator
+│   ├── 11ty/               # Eleventy templates
+│   │   ├── _includes/      # Reusable components
+│   │   │   ├── hero.njk
+│   │   │   ├── features.njk
+│   │   │   ├── featured-tools.njk
+│   │   │   └── recommendations.njk
 │   │   └── index.njk       # Homepage
 │   └── style.css           # Main stylesheet
-├── public/                 # Static assets (copied to root)
-│   ├── screenshots/       # App screenshots
-│   │   ├── iphone/       # iPhone screenshots
-│   │   └── ipad/         # iPad screenshots
-│   ├── js/
-│   │   └── theme.js      # Theme toggle script
-│   └── favicon-512.svg   # App icon
-├── assets/                # Images, fonts, etc.
-├── eleventy.config.js     # Eleventy configuration
-├── tailwind.config.js     # Tailwind configuration
-├── postcss.config.js      # PostCSS configuration
-└── package.json           # Dependencies
+├── public/                 # Static assets
+│   ├── favicon-512.svg
+│   └── js/
+│       └── theme.js        # Dark mode toggle
+├── CONTRIBUTING.md         # Contribution guide
+├── APP_GROWTH_TOOLKIT.md   # Full toolkit documentation
+├── eleventy.config.js      # Eleventy config
+└── tailwind.config.js      # Tailwind config
 ```
 
-## 🎭 Sections Included
-
-- **Hero Section**: Eye-catching header with app name and CTA buttons
-- **Features Section**: Grid layout showcasing app features
-- **Screenshots Section**: Device previews with iPhone and iPad screenshots
-- **Updates Section**: Changelog with version history and release notes
-- **Reviews Section**: User testimonials with ratings
-- **FAQ Section**: Frequently asked questions
-- **Header**: Sticky navigation with theme toggle
-- **Footer**: Company info and social links
-
-## 🎨 Customizing Styles
-
-The template uses **Tailwind CSS** for styling. You can customize:
-
-1. **Colors**: Edit `tailwind.config.js` to change the color scheme
-2. **Fonts**: Add custom fonts in `tailwind.config.js` theme.extend.fontFamily
-3. **Animations**: Modify animations in `src/style.css` or `tailwind.config.js`
-4. **Dark Mode**: Styles automatically adapt using Tailwind's dark mode classes
+---
 
 ## 🌐 Deployment
 
-### 🟢 **GitHub Pages** (Recommended - Automated)
+### GitHub Pages (Automated)
 
-**Automated deployment included!** The template comes with a GitHub Actions workflow that automatically deploys to GitHub Pages on every push to `main`.
-
-#### Quick Setup:
+The repository includes a GitHub Actions workflow for automatic deployment.
 
 1. **Push to GitHub:**
    ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push -u origin main
+   git push origin main
    ```
 
 2. **Enable GitHub Pages:**
@@ -257,113 +211,60 @@ The template uses **Tailwind CSS** for styling. You can customize:
 
 3. **Done!** Your site will be live at:
    ```
-   https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+   https://YOUR_USERNAME.github.io/app-growth-toolkit/
    ```
 
-**📖 See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for detailed instructions, custom domains, and troubleshooting.**
+### Other Platforms
+
+**Netlify / Vercel / Cloudflare Pages:**
+- Build command: `npm run build`
+- Output directory: `_site`
 
 ---
 
-### 🟡 **Netlify**
+## 🛠️ Built With
 
-```bash
-# Build command
-npm run build
+- **[Eleventy](https://www.11ty.dev/)** (v3.1.2) - Static site generator
+- **[Tailwind CSS](https://tailwindcss.com/)** (v3.4.13) - Utility-first CSS
+- **[Nunjucks](https://mozilla.github.io/nunjucks/)** - Templating engine
 
-# Publish directory
-_site
-```
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
-
-### 🔵 **Vercel**
-
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-**Settings:**
-- Build Command: `npm run build`
-- Output Directory: `_site`
-
-### 🟠 **Cloudflare Pages**
-
-1. Connect GitHub repository
-2. Build command: `npm run build`
-3. Build output directory: `_site`
-
-### 🔴 **Custom Server**
-
-```bash
-npm run build
-# Upload _site/ folder to your server
-```
-
-## 🔧 Configuration Files
-
-### Eleventy Config (`eleventy.config.js`)
-
-- Configure input/output directories
-- Add plugins (i18n included)
-- Define filters and global data
-
-### Tailwind Config (`tailwind.config.js`)
-
-- Content paths for purging unused CSS
-- Dark mode configuration
-- Custom theme extensions
-- Plugin configuration
-
-## 📝 Adding New Sections
-
-1. Create a new include file in `src/11ty/_includes/your-section.njk`
-2. Add the section data to `src/config/` if needed
-3. Include it in `src/11ty/index.njk`:
-
-```njk
-{% include "your-section.njk" %}
-```
-
-## 🌍 Multi-language Support
-
-The template includes Eleventy's i18n plugin. To add multiple languages:
-
-1. Create language directories: `src/11ty/en/`, `src/11ty/es/`, etc.
-2. Add language-specific content
-3. Update `eleventy.config.js` with language configuration
-
-## 🐛 Troubleshooting
-
-**Build fails:**
-- Ensure Node.js 18+ is installed
-- Delete `node_modules` and run `npm install` again
-
-**Styles not loading:**
-- Run `npm run build:css` manually
-- Check that Tailwind is watching the correct content paths
-
-**Dark mode not working:**
-- Clear browser localStorage
-- Check that `theme.js` is being loaded
+---
 
 ## 📄 License
 
-MIT License - feel free to use this template for personal or commercial projects.
+Apache License 2.0 - feel free to use and adapt for your needs.
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 💡 Inspiration
-
-This template was inspired by modern mobile app landing pages and combines the best practices from:
-- Mobile Landing Template (Astro-based)
-- LinguaSnap Landing Page
-- Modern web design patterns
+See [LICENSE](LICENSE) for details.
 
 ---
 
-**Made with ❤️ using Eleventy and Tailwind CSS**
+## 🙏 Acknowledgments
 
-If you find this template helpful, please consider giving it a ⭐!
+This toolkit features tools created by amazing developers and companies:
+- BezelBlend, AppNexus, Helm, Shots.so, PostSpark, and many more
+
+Special thanks to all contributors who help keep this resource up-to-date!
+
+---
+
+## 📖 Additional Resources
+
+- **[APP_GROWTH_TOOLKIT.md](APP_GROWTH_TOOLKIT.md)** - Complete guide with detailed tool comparisons, pricing, and growth strategies
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Detailed contribution guidelines with examples
+
+---
+
+**Made with ❤️ by app founders, for app founders**
+
+If this resource helped you, please consider:
+- ⭐ Starring this repository
+- 🔄 Sharing with other app founders
+- 🤝 Contributing your favorite tools
+
+---
+
+## 🔗 Links
+
+- **Live Site:** [https://tddworks.github.io/app-growth-toolkit/](https://tddworks.github.io/app-growth-toolkit/)
+- **GitHub:** [https://github.com/tddworks/app-growth-toolkit](https://github.com/tddworks/app-growth-toolkit)
+- **Issues:** [Report bugs or suggest tools](https://github.com/tddworks/app-growth-toolkit/issues)
