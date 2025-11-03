@@ -45,7 +45,7 @@ export const tools = [
     platform: "Web",
     gradient: "from-pink-500 to-rose-500",
     emoji: "🎬",
-    logo: "https://previewed.app/favicon.ico"
+    logo: "https://www.google.com/s2/favicons?domain=previewed.app&sz=128"
   },
 
   // App Store Connect Management
