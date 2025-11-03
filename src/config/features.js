@@ -19,6 +19,12 @@ export const features = [
     category: "aso"
   },
   {
+    title: "Reviews Management",
+    description: "Monitor and respond to user reviews across all app stores. AI-powered sentiment analysis and automated responses.",
+    icon: "⭐",
+    category: "reviews"
+  },
+  {
     title: "Analytics & Growth",
     description: "Track user behavior and optimize conversions. From Firebase to Mixpanel, all the essential analytics tools covered.",
     icon: "📊",

@@ -132,7 +132,7 @@ export const tools = [
     name: "AppFollow",
     description: "AI-powered review management and ASO platform. Centralized reviews across all stores.",
     url: "https://appfollow.io",
-    category: "aso",
+    category: "reviews",
     pricing: "freemium",
     platform: "Web",
     gradient: "from-emerald-500 to-teal-500",
@@ -261,6 +261,7 @@ export const categories = [
   { id: "screenshots", label: "Screenshots", emoji: "📸" },
   { id: "appstore", label: "App Store", emoji: "🏪" },
   { id: "aso", label: "ASO", emoji: "🔍" },
+  { id: "reviews", label: "Reviews", emoji: "⭐" },
   { id: "analytics", label: "Analytics", emoji: "📊" },
   { id: "monetization", label: "Monetization", emoji: "💰" },
   { id: "landing", label: "Landing Pages", emoji: "🎨" }

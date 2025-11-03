@@ -8,12 +8,12 @@
 
 ## 🎯 What is This?
 
-App Growth Toolkit is a comprehensive resource for app founders at every stage - from solo founders just starting out to teams scaling to 10K+ users. We curate the best tools across 6 essential categories and provide stage-based stack recommendations.
+App Growth Toolkit is a comprehensive resource for app founders at every stage - from solo founders just starting out to teams scaling to 10K+ users. We curate the best tools across 7 essential categories and provide stage-based stack recommendations.
 
 ### ✨ Features
 
-- **18+ Curated Tools** - Hand-picked by successful app founders
-- **6 Tool Categories** - Screenshots, App Store, ASO, Analytics, Monetization, Landing Pages
+- **20+ Curated Tools** - Hand-picked by successful app founders
+- **7 Tool Categories** - Screenshots, App Store, ASO, Reviews, Analytics, Monetization, Landing Pages
 - **3 Stage-Based Stacks** - Recommendations for Solo Founders, Growing Apps, and Scale-Ups
 - **Easy Filtering** - Click any category to filter tools
 - **Always Updated** - Open source and accepting contributions
@@ -32,7 +32,11 @@ Manage your App Store presence faster with native apps.
 
 ### 🔍 ASO (App Store Optimization)
 Boost organic downloads with keyword research and competitor analysis.
-- AppNexus ASO, Helm ASO, AppTweak, Sensor Tower
+- AppNexus ASO, Helm ASO, AppTweak, Sensor Tower, Kōmori
+
+### ⭐ Reviews Management
+Monitor and respond to user reviews across all app stores.
+- AppFollow
 
 ### 📊 Analytics
 Track user behavior and optimize conversions.
