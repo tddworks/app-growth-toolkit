@@ -23,7 +23,7 @@ export const tools = [
     platform: "iOS/Mac",
     gradient: "from-blue-500 to-cyan-500",
     emoji: "📱",
-    logo: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8c/d5/93/8cd59372-d5f8-3f8a-e0aa-e6732e7d1a69/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/230x0w.webp"
+    logo: "https://www.appatar.io/com.onegai.bezelblend/small"
   },
   {
     name: "PostSpark",
