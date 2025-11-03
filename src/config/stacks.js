@@ -82,6 +82,11 @@ export const stacks = [
         name: "AppTweak",
         purpose: "ASO",
         pricing: "$30/mo"
+      },
+      {
+        name: "AppFlight.ai",
+        purpose: "ASO",
+        pricing: "$19 one-time"
       }
     ],
     proTip: "Invest in ASO and faster workflows. Time savings pay for tools."

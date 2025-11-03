@@ -128,6 +128,17 @@ export const tools = [
     emoji: "🦇",
     logo: "https://www.google.com/s2/favicons?domain=komori.tech&sz=128"
   },
+  { 
+    name: "AppFlight",
+    description: "Conversion-first ASO. The AI agent that researches, finds keywords, and writes your entire optimized listing ready for App Store submission.",
+    url: "https://appflight.ai",
+    category: "aso",
+    pricing: "paid",
+    platform: "Web",
+    gradient: "from-blue-500 to-indigo-500",
+    emoji: "🚀",
+    logo: "https://appflight.ai/logo.png"
+  },
   {
     name: "AppFollow",
     description: "AI-powered review management and ASO platform. Centralized reviews across all stores.",
