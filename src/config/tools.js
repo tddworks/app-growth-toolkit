@@ -117,6 +117,28 @@ export const tools = [
     emoji: "📡",
     logo: "https://www.google.com/s2/favicons?domain=sensortower.com&sz=128"
   },
+  {
+    name: "Kōmori",
+    description: "Native macOS ASO toolkit. AI-powered keyword research, rank tracking, and competitor analysis.",
+    url: "http://komori.tech/",
+    category: "aso",
+    pricing: "freemium",
+    platform: "macOS",
+    gradient: "from-cyan-500 to-blue-500",
+    emoji: "🦇",
+    logo: "https://www.google.com/s2/favicons?domain=komori.tech&sz=128"
+  },
+  {
+    name: "AppFollow",
+    description: "AI-powered review management and ASO platform. Centralized reviews across all stores.",
+    url: "https://appfollow.io",
+    category: "aso",
+    pricing: "freemium",
+    platform: "Web",
+    gradient: "from-emerald-500 to-teal-500",
+    emoji: "⭐",
+    logo: "https://www.google.com/s2/favicons?domain=appfollow.io&sz=128"
+  },
 
   // Analytics Tools
   {
