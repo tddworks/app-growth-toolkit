@@ -118,6 +118,17 @@ export const tools = [
     logo: "https://www.google.com/s2/favicons?domain=sensortower.com&sz=128"
   },
   {
+    name: "GetAppNiche",
+    description: "Find profitable iOS niches with revenue estimates, ASO keywords, reviews, and competitor ads.",
+    url: "https://getappniche.com",
+    category: "aso",
+    pricing: "freemium",
+    platform: "Web",
+    gradient: "from-lime-500 to-green-500",
+    emoji: "📱",
+    logo: "https://www.google.com/s2/favicons?domain=getappniche.com&sz=128"
+  },
+  {
     name: "Kōmori",
     description: "Native macOS ASO toolkit. AI-powered keyword research, rank tracking, and competitor analysis.",
     url: "http://komori.tech/",
