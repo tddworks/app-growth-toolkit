@@ -92,6 +92,7 @@ High-quality screenshots and app previews are crucial for conversion rates in ap
 | **Figma** | Web-based | Free + Paid | Custom designs, mockups, collaboration | [figma.com](https://figma.com) |
 | **Sketch** | macOS | Paid | Professional design work, plugins | [sketch.com](https://sketch.com) |
 | **Previewed** | Web-based | Paid | Premium device mockups, animations | [previewed.app](https://previewed.app) |
+| **App Store Localizer** | Web-based | One-time ($19.99-$99.99) | Translated screenshots + localized metadata from a listing URL, 20+ locales | [asolocalization.com](https://asolocalization.com) |
 
 **Tool Comparison:**
 
