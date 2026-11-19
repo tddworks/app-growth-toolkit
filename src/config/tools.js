@@ -47,6 +47,17 @@ export const tools = [
     emoji: "🎬",
     logo: "https://www.google.com/s2/favicons?domain=previewed.app&sz=128"
   },
+  {
+    name: "XShots",
+    description: "Design, localize, and batch-export complete app store screenshot sets on one Mac canvas.",
+    url: "https://selfark.com/xshots/",
+    category: "screenshots",
+    pricing: "paid",
+    platform: "macOS",
+    gradient: "from-indigo-500 to-purple-500",
+    emoji: "📱",
+    logo: "https://selfark.com/xshots-icon-1024.png"
+  },
 
   // App Store Connect Management
   {
